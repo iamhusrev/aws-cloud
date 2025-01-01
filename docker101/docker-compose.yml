@@ -22,3 +22,5 @@ services:
       DB_USER: example
       DB_PASSWORD: example
       DB_DATABASE: example
+volumes:
+  db_data:

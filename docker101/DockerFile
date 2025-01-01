@@ -16,4 +16,4 @@ EXPOSE 5000
 # Define environment variable
 
 # Run app.py when the container launches
-CMD ["python3", "main.py"]
+CMD ["python3", "app.py"]
