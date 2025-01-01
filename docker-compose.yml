@@ -1,0 +1,24 @@
+services: 
+  db:
+    image: mysql:5.7
+    platform: linux/amd64
+    environment:
+      - MYSQL_ROOT_PASSWORD:example
+      - MYSQL_DATABASE:example
+      - MYSQL_USER:example
+      - MYSQL_PASSWORD:example
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+  app:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "5001:5000"
+    environment:
+      DB_HOST: db
+      DB_USER: example
+      DB_PASSWORD: example
+      DB_DATABASE: example
